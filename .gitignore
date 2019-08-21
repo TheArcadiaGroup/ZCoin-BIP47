@@ -134,4 +134,4 @@ zcoin.creator.user
 zcoin.files
 zcoin.includes
 /.idea
-
+cmake-build-debug

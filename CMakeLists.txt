@@ -87,12 +87,18 @@ if(BUILD_TESTS)
   enable_testing()
 endif()
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 add_library(bip47 SHARED 
     src/bip47/payment_code.cpp
+        src/pubkey.cpp
+        src/crypto/sha256.cpp
+        src/crypto/ripemd160.cpp
+        src/crypto/sha512.cpp
+        src/crypto/hmac_sha512.cpp
+        src/hash.cpp
 )
 
 # Locate libraries

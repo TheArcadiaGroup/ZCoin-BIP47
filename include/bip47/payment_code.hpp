@@ -15,6 +15,7 @@ namespace bip47 {
     using outpoint = libbitcoin::chain::output_point;
 
     const int payment_code_size = 80;
+    const uint8_t bitmessage_notification_flag = 1;
 
     // namespace low is for low-level functions and constructs.
     namespace low {
@@ -39,6 +40,17 @@ namespace bip47 {
 
         static const payment_code base58_decode(std::string string);
     };
+
+    // low contains low-level functions.
+    namespace low {
+        const payment_code null_payment_code {
+                {0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        };
+
+    }
 
 }
 
